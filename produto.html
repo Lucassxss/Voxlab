@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <div class="topo">
+        <h1>Catalogo</h1>
+        <a class="insta-btn" href="https://instagram.com/voxlab3d" target="_blank">
+            <img src="img/insta-removebg-preview.png" alt="Instagram">
+        </a>
+    </div>
+    <nav>
+        <a href="index.html#chaveiros">Chaveiros</a>
+        <a href="index.html#letreiros">Letreiros</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="index.html#animes">Bonecos / Pokémon</a>
+        <a href="index.html#utensilios">Utensílios</a>
+    </nav>
+</header>
+
+<div class="pagina-produto">
+    <img id="imagem-produto" alt="Imagem do produto">
+
+    <h2 id="nome-produto"></h2>
+    <p id="preco-produto"></p>
+    <p id="descricao-produto"></p>
+
+    <!-- FRETE + TOTAL -->
+    <div class="frete-container">
+
+        <!-- QUANTIDADE -->
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" value="1" min="1">
+
+        <!-- CEP -->
+        <label for="cep">Digite seu CEP:</label>
+        <input type="text" id="cep" placeholder="00000-000">
+
+        <button onclick="calcularFrete()">Calcular Frete</button>
+
+        <p id="total-valor">Total: R$ 0,00</p>
+
+        <!-- BOTÃO WHATSAPP -->
+        <button class="btn-whats" onclick="comprarWhats()">
+            📲 Comprar pelo WhatsApp
+        </button>
+    </div>
+
+    <a class="botao" href="https://www.instagram.com/voxlab3d/" target="_blank">
+        💬 Falar no Instagram
+    </a>
+
+    <br><br>
+
+    <a class="botao" onclick="window.history.back()">
+        ⬅ Voltar
+    </a>
+</div>
+
+<script src="produto.js"></script>
+
+</body>
+</html>
