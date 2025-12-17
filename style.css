@@ -207,3 +207,16 @@ nav a {
         width: 100%;
     }
 }
+@media (max-width: 480px) {
+
+    .grid-scroll {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: hidden;
+    }
+
+    .produto {
+        min-width: auto;
+        max-width: 100%;
+    }
+}
