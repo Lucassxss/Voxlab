@@ -5,7 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     background: #0a0a0a;
     color: white;
-    overflow-x: hidden; /* Remove scroll horizontal global */
+    overflow-x: hidden;
 }
 
 /* ===== CABEÇALHO ===== */
@@ -121,7 +121,7 @@ nav a:hover {
 }
 
 .produto:hover {
-    border: 1px solid #00eaff; /* azul uniforme */
+    border: 1px solid #00eaff;
     background: #181818;
 }
 
@@ -133,10 +133,10 @@ nav a:hover {
     background: transparent;
 }
 
-/* ===== NOMES E PREÇOS UNIFORMES AZUIS ===== */
+/* ===== NOMES E PREÇOS ===== */
 .produto p,
 .produto span {
-    color: #00eaff; /* azul uniforme */
+    color: #00eaff;
     font-weight: 500;
 }
 
@@ -166,7 +166,8 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.botao, .btn-pagar {
+/* ===== BOTÕES ===== */
+.botao {
     display: inline-block;
     margin: 8px 5px;
     padding: 10px 18px;
@@ -174,12 +175,9 @@ nav a:hover {
     border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.botao {
     background-color: #00eaff;
     color: #0a0a0a;
+    transition: 0.3s;
 }
 
 .botao:hover {
@@ -187,7 +185,7 @@ nav a:hover {
     color: #fff;
 }
 
-/* ===== FRETE E PAGAMENTO PIX ===== */
+/* ===== FRETE ===== */
 .frete-container {
     margin: 20px auto 0;
     padding: 24px;
@@ -196,12 +194,6 @@ nav a:hover {
     border-radius: 14px;
     border: 1px solid #222;
     background: linear-gradient(145deg, #1c1c1c, #111);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    transition: 0.4s;
-}
-
-.frete-container:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
 }
 
 .frete-container label {
@@ -222,15 +214,6 @@ nav a:hover {
     margin-bottom: 14px;
     background: #1f1f1f;
     color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.3s;
-}
-
-.frete-container input:focus {
-    border-color: #00eaff;
-    box-shadow: 0 0 8px rgba(0,234,255,0.5);
-    outline: none;
 }
 
 .frete-container button {
@@ -238,163 +221,63 @@ nav a:hover {
     color: #0a0a0a;
     padding: 14px 28px;
     font-weight: 700;
-    font-size: 15px;
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 12px;
-    transition: 0.3s;
-}
-
-.frete-container button:hover {
-    background: #00b8cc;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,184,204,0.5);
 }
 
 .frete-container p {
-    margin: 10px 0;
     font-size: 16px;
     font-weight: 600;
     color: #00eaff;
 }
 
-/* Botão PIX */
-.btn-pagar {
-    background: linear-gradient(145deg, #00eaff, #00b8cc);
-    color: #0a0a0a;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0,234,255,0.4);
-    transition: all 0.3s;
-}
+/* ===== RESPONSIVO AJUSTADO ===== */
+@media (max-width: 768px) {
 
-.btn-pagar:hover {
-    background: linear-gradient(145deg, #00b8cc, #00a3b3);
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(0,184,204,0.6);
-}
-
-/* ===== BOTÃO "JÁ PAGUEI" — AJUSTADO ===== */
-#btn-confirmar {
-    background: linear-gradient(135deg, #ff2ae0, #b300ff);
-    color: white !important;
-    border: none;
-    padding: 14px 26px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 380px;
-    margin: 18px auto 0;
-    display: block;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(255, 0, 214, 0.4);
-    transition: 0.25s ease-in-out;
-    position: relative;
-    z-index: 9999;
-}
-
-#btn-confirmar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 26px rgba(255, 0, 214, 0.6);
-}
-
-/* Garante que SEMPRE pode ser clicado */
-#btn-confirmar,
-#btn-confirmar * {
-    pointer-events: auto !important;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 480px) {
-    .insta-btn img {
-        width: 26px;
-        height: 26px;
+    .categoria {
+        padding: 16px 12px;
     }
 
-    header h1 {
-        font-size: 18px;
+    .categoria h2 {
+        font-size: 16px;
+    }
+
+    .grid-scroll {
+        gap: 12px;
+    }
+
+    .produto {
+        min-width: 150px;   /* 🔥 correção principal */
+        padding: 8px;
     }
 
     .produto img {
-        height: 160px;
+        height: 120px;      /* 🔥 imagem não estoura */
     }
 
-    .botao, .btn-pagar {
+    .produto p {
+        font-size: 13px;
+    }
+
+    .produto span {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 0 6px;
+    }
+
+    .botao {
         width: 100%;
-        padding: 10px;
     }
 
     .frete-container input {
         width: 100%;
     }
-}
-
-/* ===== MODAL PIX ===== */
-.pix-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.pix-box {
-    background: #141414;
-    padding: 25px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 380px;
-    text-align: center;
-    border: 1px solid #00eaff;
-}
-
-.pix-box h2 {
-    margin-top: 0;
-}
-
-#pix-qrcode {
-    width: 230px;
-    margin: 15px 0;
-}
-
-#pix-copia-cola {
-    width: 100%;
-    height: 90px;
-    background: #1b1b1b;
-    color: #eee;
-    border: 1px solid #00eaff;
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.copiar-btn,
-.fechar-btn {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    background: #00eaff;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.fechar-btn {
-    background: #d63f3f;
-    color: white;
-}
-
-.fechar-btn:hover {
-    background: #ff4b4b;
 }
