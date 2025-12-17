@@ -11,7 +11,7 @@ body, html {
 /* ===== CABEÇALHO ===== */
 header {
     background: #101010;
-    padding: 12px 18px 6px;
+    padding: 12px 16px 6px;
     position: sticky;
     top: 0;
     border-bottom: 1px solid #1f1f1f;
@@ -34,20 +34,16 @@ header h1 {
 
 .insta-btn {
     position: absolute;
-    right: 12px;
+    right: 10px;
 }
 
 .insta-btn img {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     opacity: 0.85;
-    transition: 0.2s;
 }
 
-.insta-btn img:hover {
-    opacity: 1;
-}
-
+/* ===== MENU ===== */
 nav {
     margin-top: 8px;
     text-align: center;
@@ -55,28 +51,22 @@ nav {
 
 nav a {
     color: #00eaff;
-    margin: 0 8px;
+    margin: 0 6px;
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #00b8cc;
 }
 
 /* ===== CATEGORIAS ===== */
 .categoria {
     width: 100%;
-    padding: 24px 20px;
+    padding: 22px 16px;
 }
 
 .categoria h2 {
     max-width: 1400px;
-    margin: 0 auto 14px;
+    margin: 0 auto 12px;
     font-size: 18px;
-    text-align: left;
 }
 
 /* ===== GRID HORIZONTAL ===== */
@@ -88,23 +78,9 @@ nav a:hover {
 .grid-scroll {
     display: flex;
     overflow-x: auto;
-    gap: 16px;
-    padding-bottom: 8px;
+    gap: 14px;
+    padding-bottom: 6px;
     scroll-behavior: smooth;
-}
-
-.grid-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.grid-scroll::-webkit-scrollbar-track {
-    background: #111;
-    border-radius: 3px;
-}
-
-.grid-scroll::-webkit-scrollbar-thumb {
-    background: #00eaff;
-    border-radius: 3px;
 }
 
 /* ===== PRODUTO ===== */
@@ -113,47 +89,38 @@ nav a:hover {
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
-    transition: 0.2s;
     border: 1px solid #141414;
     min-width: 200px;
     flex-shrink: 0;
     text-align: center;
 }
 
-.produto:hover {
-    border: 1px solid #00eaff;
-    background: #181818;
-}
-
 .produto img {
     width: 100%;
-    height: 200px;
+    height: 190px;
     object-fit: contain;
     border-radius: 8px;
-    background: transparent;
 }
 
-/* ===== NOMES E PREÇOS ===== */
+/* ===== TEXTO ===== */
 .produto p,
 .produto span {
     color: #00eaff;
-    font-weight: 500;
 }
 
 .produto p {
-    margin: 6px 0 4px;
+    margin: 6px 0 2px;
     font-size: 14px;
 }
 
 .produto span {
-    display: block;
     font-size: 13px;
 }
 
 /* ===== PÁGINA PRODUTO ===== */
 .pagina-produto {
     max-width: 760px;
-    margin: 32px auto;
+    margin: 28px auto;
     background: #141414;
     padding: 18px;
     border-radius: 12px;
@@ -166,7 +133,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
-/* ===== BOTÕES ===== */
+/* ===== BOTÃO ===== */
 .botao {
     display: inline-block;
     margin: 8px 5px;
@@ -177,63 +144,33 @@ nav a:hover {
     cursor: pointer;
     background-color: #00eaff;
     color: #0a0a0a;
-    transition: 0.3s;
-}
-
-.botao:hover {
-    background-color: #00b8cc;
-    color: #fff;
 }
 
 /* ===== FRETE ===== */
 .frete-container {
-    margin: 20px auto 0;
-    padding: 24px;
+    margin: 18px auto 0;
+    padding: 20px;
     max-width: 400px;
-    text-align: center;
     border-radius: 14px;
     border: 1px solid #222;
     background: linear-gradient(145deg, #1c1c1c, #111);
 }
 
-.frete-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    color: #00eaff;
-}
-
 .frete-container input {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    width: 160px;
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 14px;
-    background: #1f1f1f;
-    color: #fff;
+    width: 100%;
 }
 
-.frete-container button {
-    background: #00eaff;
-    color: #0a0a0a;
-    padding: 14px 28px;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 12px;
-}
+/* ===== RESPONSIVO MOBILE (AJUSTE REAL) ===== */
+@media (max-width: 480px) {
 
-.frete-container p {
-    font-size: 16px;
-    font-weight: 600;
-    color: #00eaff;
-}
+    header h1 {
+        font-size: 17px;
+    }
 
-/* ===== RESPONSIVO AJUSTADO ===== */
-@media (max-width: 768px) {
+    nav a {
+        font-size: 13px;
+        margin: 0 4px;
+    }
 
     .categoria {
         padding: 16px 12px;
@@ -241,19 +178,21 @@ nav a:hover {
 
     .categoria h2 {
         font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .grid-scroll {
-        gap: 12px;
+        gap: 10px;
     }
 
     .produto {
-        min-width: 150px;   /* 🔥 correção principal */
+        min-width: 140px; /* 🔥 agora cabem 2+ */
         padding: 8px;
+        border-radius: 8px;
     }
 
     .produto img {
-        height: 120px;      /* 🔥 imagem não estoura */
+        height: 120px; /* 🔥 imagem correta */
     }
 
     .produto p {
@@ -264,20 +203,7 @@ nav a:hover {
         font-size: 12px;
     }
 
-    header h1 {
-        font-size: 17px;
-    }
-
-    nav a {
-        font-size: 13px;
-        margin: 0 6px;
-    }
-
     .botao {
-        width: 100%;
-    }
-
-    .frete-container input {
         width: 100%;
     }
 }
