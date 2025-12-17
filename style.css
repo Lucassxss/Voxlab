@@ -1,4 +1,8 @@
 /* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -69,16 +73,17 @@ nav a {
     font-size: 18px;
 }
 
-/* ===== GRID HORIZONTAL ===== */
+/* ===== GRID / CARROSSEL ===== */
 .categoria-container {
     max-width: 1400px;
     margin: auto;
 }
 
+/* DESKTOP / TABLET = CARROSSEL */
 .grid-scroll {
     display: flex;
-    overflow-x: auto;
     gap: 14px;
+    overflow-x: auto;
     padding-bottom: 6px;
     scroll-behavior: smooth;
 }
@@ -160,8 +165,8 @@ nav a {
     width: 100%;
 }
 
-/* ===== RESPONSIVO MOBILE (AJUSTE REAL) ===== */
-@media (max-width: 480px) {
+/* ===== RESPONSIVO DE VERDADE (CELULAR) ===== */
+@media (max-width: 600px) {
 
     header h1 {
         font-size: 17px;
@@ -181,18 +186,23 @@ nav a {
         margin-bottom: 10px;
     }
 
+    /* 🔥 AQUI ESTÁ A CORREÇÃO PRINCIPAL */
     .grid-scroll {
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        overflow-x: hidden;
     }
 
     .produto {
-        min-width: 140px; /* 🔥 agora cabem 2+ */
+        min-width: unset; /* remove quebra */
+        width: 100%;
         padding: 8px;
         border-radius: 8px;
     }
 
     .produto img {
-        height: 120px; /* 🔥 imagem correta */
+        height: 130px;
     }
 
     .produto p {
@@ -205,18 +215,5 @@ nav a {
 
     .botao {
         width: 100%;
-    }
-}
-@media (max-width: 480px) {
-
-    .grid-scroll {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        overflow-x: hidden;
-    }
-
-    .produto {
-        min-width: auto;
-        max-width: 100%;
     }
 }
